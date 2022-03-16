@@ -39,6 +39,7 @@
     <br> <br>
     <button onclick="fetchItem()"> Fetch</button>
     <button onclick="zap()"> Zap values</button>
+    <button onclick="unique()">Unique</button>
         
 	
 	
@@ -74,6 +75,19 @@
             if (item == queueItems[i].innerHTML) {
                 queueItems[i].remove();
                 console.log("We are getting rid of all the elements with that text");
+            }
+        }
+    }
+
+    function unique() {
+        queueItems = document.getElementsByClassName('queue');
+        var len = queueItems.length
+        for (let i = 0; i < len; i++) {
+            for (let j = i + 1; j < len - 1; j++) {
+                if (queueItems[i].innerHTML == queueItems[j].innerHTML) {
+                    queueItems[j].remove();
+                    
+                }
             }
         }
     }
